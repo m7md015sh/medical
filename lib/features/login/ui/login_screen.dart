@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_app/core/widgets/app_text_button.dart';
+import 'package:medical_app/features/login/data/models/login_request_body.dart';
+import 'package:medical_app/features/login/logic/cubit/login_cubit.dart';
 
 import '../../../core/helpers/spacing.dart';
 import '../../../core/theming/styles.dart';
@@ -10,15 +12,20 @@ import 'widgets/email_and_password.dart';
 import 'widgets/login_bloc_listener.dart';
 import 'widgets/terms_and_conditions_text.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 80.h),
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 50.h),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,14 +56,14 @@ class LoginScreen extends StatelessWidget {
                       buttonText: "Login",
                       textStyle: TextStyles.font16WhiteSemiBold,
                       onPressed: () {
-                    //    validateThenDoLogin(context);
+                        validateThenDoLogin(context);
                       },
                     ),
                     verticalSpace(40),
                     const TermsAndConditionsText(),
                     verticalSpace(14),
                     const DontHaveAccountText(),
-                  //  const LoginBlocListener(),
+                      const LoginBlocListener(),
                   ],
                 ),
               ],
@@ -67,9 +74,10 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  // void validateThenDoLogin(BuildContext context) {
-  //   if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-  //     context.read<LoginCubit>().emitLoginStates();
-  //   }
-  // }
 }
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
+  }
+
