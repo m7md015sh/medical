@@ -24,49 +24,51 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 50.h),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Welcome Back',
-                  style: TextStyles.font24BlueBold,
-                ),
-                verticalSpace(8),
-                Text(
-                  'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                  style: TextStyles.font14GrayRegular,
-                ),
-                verticalSpace(36),
-                Column(
-                  children: [
-                    const EmailAndPassword(),
-                    verticalSpace(24),
-                    Align(
-                      alignment: AlignmentDirectional.centerEnd,
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyles.font13BlueRegular,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Welcome Back',
+                    style: TextStyles.font24BlueBold,
+                  ),
+                  verticalSpace(8),
+                  Text(
+                    'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
+                    style: TextStyles.font14GrayRegular,
+                  ),
+                  verticalSpace(36),
+                  Column(
+                    children: [
+                      const EmailAndPassword(),
+                      verticalSpace(24),
+                      Align(
+                        alignment: AlignmentDirectional.centerEnd,
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyles.font13BlueRegular,
+                        ),
                       ),
-                    ),
-                    verticalSpace(40),
-                    AppTextButton(
-                      buttonText: "Login",
-                      textStyle: TextStyles.font16WhiteSemiBold,
-                      onPressed: () {
-                        validateThenDoLogin(context);
-                      },
-                    ),
-                    verticalSpace(40),
-                    const TermsAndConditionsText(),
-                    verticalSpace(14),
-                    const DontHaveAccountText(),
-                      const LoginBlocListener(),
-                  ],
-                ),
-              ],
+                      verticalSpace(40),
+                      AppTextButton(
+                        buttonText: "Login",
+                        textStyle: TextStyles.font16WhiteSemiBold,
+                        onPressed: () {
+                          validateThenDoLogin(context);
+                        },
+                      ),
+                      verticalSpace(40),
+                      const TermsAndConditionsText(),
+                      verticalSpace(14),
+                      const DontHaveAccountText(),
+                        const LoginBlocListener(),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
