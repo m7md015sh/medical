@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938179365284",
+    "project_id": "fir-appdistribution-322ed",
+    "storage_bucket": "fir-appdistribution-322ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938179365284:android:b140dd21469a6f0d415931",
+        "android_client_info": {
+          "package_name": "com.example.medical_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUqAt_BPhB9Rno0KNoeI3CHbQh9sMnV_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

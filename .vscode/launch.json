@@ -2,14 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "free",
+      "name": "DocDoc Development",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
       "args": ["--flavor", "free", "--target", "lib/main_development.dart" ]
     },
     {
-      "name": "free",
+      "name": "DocDoc Production",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_production.dart",
