@@ -23,12 +23,12 @@
        with:
          channel: stable
 
-#     - name: Setup Ruby
-#       uses: ruby/setup-ruby@v1
-#       with:
-#         ruby-version: "3.3.7"
-#         bundler-cache: true
-#         working-directory: android
+     - name: Setup Ruby
+       uses: ruby/setup-ruby@v1
+       with:
+         ruby-version: "3.2.3"
+         bundler-cache: true
+         working-directory: android
 
      - name: Build and Distribute App
        env:
